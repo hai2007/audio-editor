@@ -39,6 +39,9 @@ export default class {
 
     hadValue: boolean
 
+    // 当前缓存的长度
+    len: number
+
     $setup() {
         return {
             step: ref('select-file'),
@@ -50,13 +53,15 @@ export default class {
     // 下载
     download() {
 
+        this.len += 1
+
         let trs = document.getElementById('table-list').getElementsByTagName('tr')
         let indexs = []
         for (let index = 0; index < trs.length; index++) {
             if (trs[index].getElementsByTagName('input')[0].checked) indexs.push(index)
         }
 
-        this.audioJS.download(...indexs)
+        this.audioJS.merge(...indexs).download(this.len - 1)
 
     }
 
@@ -64,9 +69,20 @@ export default class {
     // 也就是根据切割点，在下面列出一段段的结果
     doUpdate() {
 
-        this.audioJS.reset()
+        let _splits = this.clunch.splits.slice(0).sort()
 
-        let splits = this.clunch.splits.slice(0).sort()
+        // 同时，消除一些重复的值
+        let splits = []
+        let preValue = null
+        for (let item of _splits) {
+            if (item != preValue) {
+                splits.push(item)
+                preValue = item
+            }
+        }
+
+        this.audioJS.reset()
+        this.len = splits.length - 1
 
         let template = ""
         for (let index = 1; index < splits.length; index++) {
