@@ -53,16 +53,20 @@ export default class {
     // 下载
     download() {
 
-        this.len += 1
-
         let trs = document.getElementById('table-list').getElementsByTagName('tr')
         let indexs = []
         for (let index = 0; index < trs.length; index++) {
             if (trs[index].getElementsByTagName('input')[0].checked) indexs.push(index)
         }
 
-        this.audioJS.merge(...indexs).download(this.len - 1)
+        if (indexs.length <= 0) {
+            alert('请至少选择一个片段~')
+            return
+        }
 
+        this.audioJS.merge(...indexs).download(this.len)
+
+        this.len += 1
     }
 
     // 更新数据
