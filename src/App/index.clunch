@@ -1,0 +1,1 @@
+<ui-index c-on:mousedown='doSelect' />

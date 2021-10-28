@@ -23,6 +23,9 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: ['./html-loader.js']
+        }, {
+            test: /\.clunch$/,
+            loader: ['clunch/loader.js']
         }]
     }
 };

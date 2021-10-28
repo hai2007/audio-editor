@@ -5,12 +5,29 @@
   </h2>
   <search></search>
 </header>
+
+<!-- 选择 -->
 <div class="select-file view" ui-bind:active='step=="select-file"'>
   <input type="file" id="file" ui-on:change="doit" accept="audio/*" />
   <label for='file'>
     点击我选择需要编辑的音频文件
   </label>
 </div>
-<div class='editor-file view' ui-bind:active='step=="editor-file"'>
-  编辑界面
+
+<!-- 编辑 -->
+<div class='editor-file view' ui-bind:active='step=="editor-file"' ui-on:mouseup='doMouseup'>
+
+  <!-- 可视化操作切割点 -->
+  <div id="time-line"></div>
+
+  <!-- 新增一个切割点 -->
+  <div class='add-split'>
+    <input type="text" ui-model='newTime'>
+    <button ui-on:click='addSplit'>新增</button>
+  </div>
+
+  <div class='more'>
+    <span ui-on:click='doUpdate'>更新数据</span>
+  </div>
+
 </div>
