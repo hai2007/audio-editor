@@ -1,5 +1,6 @@
 import { Component, ref } from 'nefbl'
 import getLength from '../tool/getLength'
+import formatTime from '../tool/formatTime'
 
 let AudioJS = require('@hai2007/audio')
 let Clunch = require('clunch')
@@ -36,17 +37,60 @@ export default class {
     // 新增切割点值
     newTime: string
 
+    hadValue: boolean
+
     $setup() {
         return {
             step: ref('select-file'),
-            newTime: ref('0:0.0')
+            newTime: ref('0:0.0'),
+            hadValue: ref(false)
         }
+    }
+
+    // 下载
+    download() {
+
+        let trs = document.getElementById('table-list').getElementsByTagName('tr')
+        let indexs = []
+        for (let index = 0; index < trs.length; index++) {
+            if (trs[index].getElementsByTagName('input')[0].checked) indexs.push(index)
+        }
+
+        this.audioJS.download(...indexs)
+
     }
 
     // 更新数据
     // 也就是根据切割点，在下面列出一段段的结果
     doUpdate() {
 
+        this.audioJS.reset()
+
+        let splits = this.clunch.splits.slice(0).sort()
+
+        let template = ""
+        for (let index = 1; index < splits.length; index++) {
+
+            // 截取片段
+            this.audioJS.extract(splits[index - 1], splits[index])
+
+            // 拼接条码
+            template += `<tr>
+                <th>
+                    <input type="checkbox" checked="checked">
+                </th>
+                <th>${index}</th>
+                <th>${formatTime(splits[index - 1])}</th>
+                <th>${formatTime(splits[index])}</th>
+            </tr>`
+        }
+
+        let tbody = document.getElementById('table-list')
+
+        // 添加内容
+        tbody.innerHTML = template
+
+        this.hadValue = true
     }
 
     // 新增切割点

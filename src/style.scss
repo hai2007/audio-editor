@@ -1,0 +1,16 @@
+.table-frame {
+    width: 100%;
+    font-size: 14px;
+
+    thead {
+        background-color: #b2b2bd;
+    }
+
+    th {
+        padding: 10px;
+    }
+
+    tbody {
+        border: 1px solid #b2b2bd;
+    }
+}

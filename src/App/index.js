@@ -1,3 +1,5 @@
+import formatTime from "../tool/formatTime"
+
 export default [function () {
   return {
     region: {
@@ -58,7 +60,7 @@ export default [function () {
           .fill()
 
         // 绘制底部的时间
-        painter.fillText(((split / 60).toFixed(0)) + ":" + ((split % 60).toFixed(0)) + "." + ((split % 1).toFixed(3) + "").replace(/^.{0,}\./, ''), 30 + split * dist, this._height - 10)
+        painter.fillText(formatTime(split), 30 + split * dist, this._height - 10)
       }
 
     }
