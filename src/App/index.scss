@@ -1,0 +1,76 @@
+a {
+  user-select: none;
+  position: fixed;
+  transform: rotate(45deg);
+  line-height: 1.6em;
+  transform-origin: 150px 23px;
+  text-align: center;
+  font-family: sans-serif;
+  display: inline-block;
+  top: 97px;
+  right: -91px;
+  width: 300px;
+  background-color: #bac7cd;
+  outline: 4px solid #bac7cd;
+  border: 2px dashed #ffffff;
+  color: #ffffff;
+}
+
+header {
+  background-color: #1c5786;
+  padding: 10px;
+  color: white;
+  height: 50px;
+  box-shadow: rgb(96 125 139) 0px 4px 6px;
+  background-image: url(./logo.png);
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+  background-position: 10px center;
+  position: relative;
+
+  &>h2 {
+    line-height: 30px;
+    display: inline-block;
+    font-size: 16px;
+  }
+}
+
+.view {
+  display: none;
+
+  // 控制当前谁应该显示
+  &[active=true] {
+    display: block;
+  }
+
+  &.select-file {
+    text-align: center;
+
+    input {
+      display: none;
+    }
+
+    background-image: url('./image/music.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 60px;
+    margin-top: 50px;
+
+    label {
+      margin: 50px 100px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 7px 10px;
+      background-color: #0297ed;
+      color: white;
+      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+}

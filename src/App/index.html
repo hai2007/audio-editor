@@ -1,0 +1,16 @@
+<a href="https://github.com/hai2007/audio-editor" target="_blank">Fork Me on Github</a>
+<header>
+  <h2>
+    Audio Editor | 在线H5音频编辑器
+  </h2>
+  <search></search>
+</header>
+<div class="select-file view" ui-bind:active='step=="select-file"'>
+  <input type="file" id="file" ui-on:change="doit" accept="audio/*" />
+  <label for='file'>
+    点击我选择需要编辑的音频文件
+  </label>
+</div>
+<div class='editor-file view' ui-bind:active='step=="editor-file"'>
+  编辑界面
+</div>

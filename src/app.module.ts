@@ -1,7 +1,10 @@
 import { Module } from 'nefbl'
 
-// 组件
+// 主界面
 import AppComponent from './App/index'
+
+// 组件
+import search from './component/search/index'
 
 // 指令
 import uiBind from './directive/ui-bind'
@@ -11,6 +14,7 @@ import uiOn from './directive/ui-on'
 @Module({
     declarations: [
         AppComponent,
+        search,
         uiBind, uiModel, uiOn
     ],
     imports: [],
