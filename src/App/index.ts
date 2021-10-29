@@ -1,6 +1,7 @@
 import { Component, ref } from 'nefbl'
 import getLength from '../tool/getLength'
 import formatTime from '../tool/formatTime'
+import quickSort from '../tool/quickSort'
 
 let AudioJS = require('@hai2007/audio')
 let Clunch = require('clunch')
@@ -73,7 +74,7 @@ export default class {
     // 也就是根据切割点，在下面列出一段段的结果
     doUpdate() {
 
-        let _splits = this.clunch.splits.slice(0).sort()
+        let _splits = quickSort(this.clunch.splits.slice(0))
 
         // 同时，消除一些重复的值
         let splits = []
