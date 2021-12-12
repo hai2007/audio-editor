@@ -3,11 +3,11 @@ import getLength from '../tool/getLength'
 import formatTime from '../tool/formatTime'
 import quickSort from '../tool/quickSort'
 
-let AudioJS = require('@hai2007/audio')
-let Clunch = require('clunch')
+import AudioJS from '@hai2007/audio'
+import Clunch from 'clunch'
 
 import image from './index.clunch'
-import uiIndex from './index.js'
+import uiIndex from './ui-index.js'
 
 import style from './index.scss'
 import template from './index.html'
