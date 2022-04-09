@@ -1,155 +1,63 @@
-a {
-  user-select: none;
-  position: fixed;
-  transform: rotate(45deg);
-  line-height: 1.6em;
-  transform-origin: 150px 23px;
-  text-align: center;
-  font-family: sans-serif;
-  display: inline-block;
-  top: 97px;
-  right: -91px;
-  width: 300px;
-  background-color: #bac7cd;
-  outline: 4px solid #bac7cd;
-  border: 2px dashed #ffffff;
-  color: #ffffff;
+.fork {
+    user-select: none;
+    position: fixed;
+    transform: rotate(45deg);
+    line-height: 1.6em;
+    transform-origin: 150px 23px;
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    top: 97px;
+    right: -91px;
+    width: 300px;
+    background-color: #bac7cd;
+    outline: 4px solid #bac7cd;
+    border: 2px dashed #ffffff;
+    color: #ffffff;
 }
 
 header {
-  background-color: #1c5786;
-  padding: 10px;
-  color: white;
-  height: 50px;
-  box-shadow: rgb(96 125 139) 0px 4px 6px;
-  background-image: url(./logo.png);
-  background-size: auto 80%;
-  background-repeat: no-repeat;
-  padding-left: 60px;
-  background-position: 10px center;
-  position: relative;
+    background-color: #1c5786;
+    padding: 10px;
+    color: white;
+    height: 50px;
+    box-shadow: rgb(96 125 139) 0px 4px 6px;
+    background-image: url(./logo.png);
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+    background-position: 10px center;
+    position: relative;
 
-  &>h2 {
-    line-height: 30px;
-    display: inline-block;
-    font-size: 16px;
-  }
+    &>h2 {
+        line-height: 30px;
+        display: inline-block;
+        font-size: 16px;
+    }
 }
 
-.view {
-  display: none;
+div {
+    min-height: calc(100vh - 147px);
+}
 
-  // 控制当前谁应该显示
-  &[active=true] {
-    display: block;
-  }
-
-  // 选择文件界面
-  &.select-file {
+footer {
+    height: 97px;
     text-align: center;
+    background-color: #fafafa;
+    border-top: 1px solid #d3d0d0;
+    line-height: 2em;
+    padding: 20px 0;
+    font-size: 14px;
+    min-width: 700px;
 
-    input {
-      display: none;
-    }
-
-    background-image: url('./image/music.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    padding-top: 60px;
-    margin-top: 50px;
-
-    label {
-      margin: 50px 100px;
-      display: inline-block;
-      cursor: pointer;
-      padding: 7px 10px;
-      background-color: #0297ed;
-      color: white;
-      font-size: 12px;
-
-      &:hover {
+    a {
+        padding: 0 5px;
+        color: rgb(5, 100, 117);
         text-decoration: underline;
-      }
 
+        &:hover {
+            color: rgb(3, 61, 71);
+            font-weight: 800;
+        }
     }
-  }
-
-  // 编辑界面
-  &.editor-file {
-    padding: 100px;
-
-    // 选择时间切割点
-    #time-line {
-      height: 100px;
-
-    }
-
-    .add-split {
-      margin-top: 30px;
-
-      input {
-        height: 30px;
-        width: 160px;
-        padding: 0 10px;
-        vertical-align: top;
-        outline: none;
-      }
-
-      button {
-        height: 30px;
-        border: none;
-        font-size: 12px;
-        padding: 0 10px;
-        background-color: #b2b2bd;
-        color: white;
-        vertical-align: top;
-      }
-    }
-
-  }
-
-  // 更多
-  .more {
-    text-align: center;
-    background-image: url(./image/more-line.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    margin-top: 30px;
-
-    &>span {
-      color: #6d757a;
-      font-size: 12px;
-      background-image: url(./image/more.png);
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      width: 94px;
-      height: 30px;
-      line-height: 30px;
-      display: inline-block;
-      position: relative;
-      bottom: 10px;
-      cursor: pointer;
-    }
-  }
-
-  .btn-list {
-    text-align: center;
-    margin-top: 30px;
-
-    &>button {
-      height: 30px;
-      border: none;
-      font-size: 12px;
-      background-color: #1c5786;
-      color: white;
-      width: 120px;
-    }
-  }
-
-  // 底部切割显示区域是否显示
-  .list-class {
-    &[active=false] {
-      display: none;
-    }
-  }
 }

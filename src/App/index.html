@@ -1,49 +1,15 @@
-<a href="https://github.com/hai2007/audio-editor" target="_blank">Fork Me on Github</a>
+<a class="fork" href="https://github.com/hai2007/audio-editor" target="_blank">Fork Me on Github</a>
 <header>
   <h2>
     Audio Editor | 在线H5音频编辑器
   </h2>
   <search></search>
 </header>
-
-<!-- 选择 -->
-<div class="select-file view" ui-bind:active='step=="select-file"'>
-  <input type="file" id="file" ui-on:change="doit" accept="audio/*" />
-  <label for='file'>
-    点击我选择需要编辑的音频文件
-  </label>
-</div>
-
-<!-- 编辑 -->
-<div class='editor-file view' ui-bind:active='step=="editor-file"' ui-on:mouseup='doMouseup'>
-
-  <!-- 可视化操作切割点 -->
-  <div id="time-line"></div>
-
-  <!-- 新增一个切割点 -->
-  <div class='add-split'>
-    <input type="text" ui-model='newTime'>
-    <button ui-on:click='addSplit'>新增切割点</button>
-  </div>
-
-  <div class='more'>
-    <span ui-on:click='doUpdate'>生成片段</span>
-  </div>
-
-  <table class='table-frame list-class' ui-bind:active='hadValue'>
-    <thead>
-      <tr>
-        <th>选择</th>
-        <th>序号</th>
-        <th>开始时间</th>
-        <th>结束时间</th>
-      </tr>
-    </thead>
-    <tbody id='table-list'></tbody>
-  </table>
-
-  <div class="btn-list list-class" ui-bind:active='hadValue'>
-    <button ui-on:click='download'>下载</button>
-  </div>
-
-</div>
+<div ui-lazy='currentPage'></div>
+<footer>
+    Copyright © 2021-2022
+    <a href="https://hai2007.gitee.io/sweethome/" target="_blank">hai2007 走一步，再走一步。</a>
+    All rights reserved.
+    <br />
+    本网站由“你好2007”设计、开发和维护
+</footer>

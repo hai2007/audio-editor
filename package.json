@@ -1,12 +1,13 @@
 {
   "name": "audio-editor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "在线H5音频编辑器",
   "scripts": {
-    "build": "pack_pkg --config pack.prod.js",
+    "build": "nodejs -e build && pack_pkg --config pack.prod.js",
     "dev": "pack_dev --config pack.dev.js"
   },
   "devDependencies": {
+    "@hai2007/nodejs": "^3.0.1",
     "@nefbl/pack": "^0.4.0"
   },
   "dependencies": {

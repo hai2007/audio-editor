@@ -1,0 +1,116 @@
+.view {
+  display: none;
+
+  // 控制当前谁应该显示
+  &[active=true] {
+    display: block;
+  }
+
+  // 选择文件界面
+  &.select-file {
+    text-align: center;
+
+    input {
+      display: none;
+    }
+
+    background-image: url('./image/music.png');
+    background-repeat: no-repeat;
+    background-position: center 70px;
+    padding-top: 130px;
+
+    label {
+      margin: 50px 100px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 7px 10px;
+      background-color: #0297ed;
+      color: white;
+      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  // 编辑界面
+  &.editor-file {
+    padding: 100px;
+
+    // 选择时间切割点
+    #time-line {
+      height: 100px;
+
+    }
+
+    .add-split {
+      margin-top: 30px;
+
+      input {
+        height: 30px;
+        width: 160px;
+        padding: 0 10px;
+        vertical-align: top;
+        outline: none;
+      }
+
+      button {
+        height: 30px;
+        border: none;
+        font-size: 12px;
+        padding: 0 10px;
+        background-color: #b2b2bd;
+        color: white;
+        vertical-align: top;
+      }
+    }
+
+  }
+
+  // 更多
+  .more {
+    text-align: center;
+    background-image: url(./image/more-line.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-top: 30px;
+
+    &>span {
+      color: #6d757a;
+      font-size: 12px;
+      background-image: url(./image/more.png);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      width: 94px;
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      position: relative;
+      bottom: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .btn-list {
+    text-align: center;
+    margin-top: 30px;
+
+    &>button {
+      height: 30px;
+      border: none;
+      font-size: 12px;
+      background-color: #1c5786;
+      color: white;
+      width: 120px;
+    }
+  }
+
+  // 底部切割显示区域是否显示
+  .list-class {
+    &[active=false] {
+      display: none;
+    }
+  }
+}

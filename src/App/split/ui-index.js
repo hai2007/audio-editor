@@ -1,4 +1,4 @@
-import formatTime from "../tool/formatTime"
+import formatTime from "../../tool/formatTime"
 
 export default [function () {
   return {

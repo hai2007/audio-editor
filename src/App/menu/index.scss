@@ -1,0 +1,73 @@
+.view {
+    text-align: center;
+    padding: 30px;
+    width: 700px;
+    margin: auto;
+    background-color: #e3e9ed;
+
+    &>h2 {
+        padding: 10px;
+        border-bottom: 1px solid white;
+        width: 400px;
+        margin: auto;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    &>div {
+        margin-bottom: 20px;
+
+        &>a {
+            display: inline-block;
+            background-color: white;
+            margin: 10px;
+            vertical-align: top;
+            cursor: pointer;
+            color: rgb(80, 78, 78);
+            width: 140px;
+
+            border-width: 5px 0;
+            border-style: solid;
+
+            &.audio {
+                border-color: black;
+
+                &>i {
+                    background-color: #dfd2d2;
+                    background-image: url('./image/split.png');
+                }
+            }
+
+            &:hover {
+                &>span {
+                    text-decoration: underline;
+                }
+
+                outline: 3px solid white;
+            }
+
+
+            &>h4 {
+                padding: 10px 0;
+            }
+
+            &>i {
+                display: block;
+                margin: auto;
+                background-position: center center;
+                background-repeat: no-repeat;
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                background-size: 70% auto;
+            }
+
+            &>span {
+                display: block;
+                font-size: 12px;
+                padding: 20px 5px;
+            }
+        }
+
+    }
+}
