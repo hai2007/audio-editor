@@ -22,7 +22,7 @@ export default class {
     goSearch(event) {
 
         // 如果是回车就带着数据跳转到查询界面
-        if (event.keyCode == 13) openPage("https://hai2007.gitee.io/sweethome/#/search?wd=" + encodeURIComponent(this.wd))
+        if (event.keyCode == 13) openPage("https://hai2007.github.io/SweetHome/#/search?wd=" + encodeURIComponent(this.wd))
 
     }
 
